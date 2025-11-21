@@ -1,12 +1,30 @@
-import { Image, StyleSheet, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+//import { Text } from "react-native-reanimated/lib/typescript/Animated";
 
 export default function Index() {
   return (
     <View
       style={styles.container}
     >
-      <Image source={require('./pomodoro.png')} />
-      <View style={styles.actions}/>
+      <Image source={require('./pomodoro.png')}/>
+      <View style={styles.actions}>
+        <Text style={styles.timer}>
+          25:00
+        </Text>
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>
+            Começar
+          </Text>
+        </Pressable>
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>
+          Projeto fictício e sem fins comerciais.
+        </Text>
+        <Text style={styles.footerText}>
+          Desenvolvido por Alura.
+        </Text>
+      </View>
     </View>
   );
 }
@@ -27,6 +45,36 @@ const styles = StyleSheet.create({
     width:'80%',
     borderRadius: 32,
     borderWidth: 2,
-    borderColor: '144480'
+    borderColor: '144480',
+    gap:32
+  },
+  timer:{
+    fontSize:54,
+    color: '#FFF',
+    fontWeight: 'bold',
+    textAlign:'center'
+
+  },
+  button:{
+    backgroundColor:'#B872FF',
+    borderRadius: 10,
+    padding:8
+  
+  },
+  buttonText:{
+    textAlign:'center',
+    Color:'#021123',
+    fontSize:18
+
+  },
+  footer:{
+    width:'80%',
+
+  },
+  footerText:{
+    textAlign:'center',
+    color:'#98A0A8',
+    fontSize:12.5
+
   }
 })
